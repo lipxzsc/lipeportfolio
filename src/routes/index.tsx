@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-const LINKEDIN_URL = "https://www.linkedin.com/";
-const GITHUB_URL = "https://github.com/";
+const LINKEDIN_URL = "https://www.linkedin.com/in/lipefontana";
+const GITHUB_URL = "https://github.com/lipxzsc";
 const ADEGA_URL = "https://projetoadega.lovable.app";
 
 export const Route = createFileRoute("/")({
@@ -16,19 +16,39 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const jornada = [
-  { emoji: "🛠️", title: "Trabalhos informais", text: "Passei por vários bicos diferentes. Cada um me ensinou algo: atender gente, resolver problemas na hora e me adaptar rápido." },
-  { emoji: "🧠", title: "Aprendizado na prática", text: "Sem caminho tradicional, aprendi fazendo. Errar, testar de novo e melhorar virou meu método." },
-  { emoji: "🎓", title: "Terminando o ensino médio", text: "Com 23 anos, estou concluindo os estudos e dando meus primeiros passos no mercado de trabalho formal." },
-  { emoji: "🚀", title: "Rumo à T.I.", text: "Agora junto tudo isso com o que mais amo: tecnologia, hardware e criar soluções úteis." },
+const experiencias = [
+  {
+    emoji: "🔩",
+    title: "DS Peças & FD Auto Parts",
+    badge: "Empresas familiares",
+    text: "Atuei como auxiliar mecânico, mas fiz de tudo um pouco: vendas no balcão e online, gerenciamento de estoque, postagem de peças, cobrança de clientes, contas a receber e a pagar, abertura e fechamento de caixa — praticamente um auxiliar administrativo completo! Trabalhava conforme \"guentava o tranco\": por ser um pouco braçal, às vezes cansava demais e ficava um pouco ruim. Por ser ambiente familiar, vieram muitos conflitos e acabei saindo. Mas o aprendizado ficou! 💪",
+  },
+  {
+    emoji: "🚗",
+    title: "Glauber Multimarcas",
+    badge: "Algumas semanas",
+    text: "Consegui trabalhar poucas semanas por lá, porém devido às minhas condições físicas e ao amplo conhecimento exigido pelo empregador, fui despedido. Era informal e eu recebia R$300 por semana… poisé 🫠🤦🏽‍♂️. Mas nem tudo foi perda: aprendi a trocar freios, limpar reservatórios, usar scanner, trocar óleo e o básico de manutenção!",
+  },
+  {
+    emoji: "🖥️",
+    title: "Computação desde pequeno",
+    badge: "Paixão de infância",
+    text: "Desde muito novo sempre gostei e fucei em tudo sobre computação e hardware. Trocava peças, melhorava algumas e trocava outras, instalava drivers e programas, além de formatação e backup de arquivos. O computador sempre foi meu laboratório particular! 🔬",
+  },
+  {
+    emoji: "🌐",
+    title: "Fuçando na web",
+    badge: "Explorador nato",
+    text: "Depois comecei a fuçar na web: criação de websites, alterações de templates WordPress… e até cheguei na época de pastear cheats de Counter-Strike (pegar funcionalidades da source de um cheat e adicionar em outra source pra \"ter um cheat próprio\" 😅). Era apaixonado em descobrir tudo que poderia fazer!",
+  },
 ];
 
 const paixoes = [
   { emoji: "🖥️", label: "Montagem de PCs" },
   { emoji: "🔧", label: "Manutenção de hardware" },
-  { emoji: "💾", label: "Formatação e sistemas" },
-  { emoji: "🌐", label: "Redes e internet" },
-  { emoji: "🧩", label: "Criação de sites" },
+  { emoji: "💾", label: "Formatação e backup" },
+  { emoji: "🌐", label: "Criação de sites" },
+  { emoji: "🎮", label: "PC Gamer (no sangue!)" },
   { emoji: "🤖", label: "Novas tecnologias" },
 ];
 
@@ -58,7 +78,7 @@ function Index() {
       <section id="sobre" className="mx-auto max-w-5xl px-5 py-10">
         <SectionTitle emoji="🙋" title="Sobre mim" />
         <div className="grid gap-4 sm:grid-cols-3">
-          <Fact color="bg-sun" emoji="🎂" title="23 anos" text="Terminando o ensino médio e entrando no mercado de trabalho." />
+          <Fact color="bg-sun" emoji="🎂" title="23 anos" text="Terminando o ensino médio e ingressando no mercado de trabalho." />
           <Fact color="bg-mint" emoji="♿" title="PCD" text="CID-10: E84.8 — Fibrose Cística. Persistência faz parte do meu dia a dia." />
           <Fact color="bg-sky" emoji="💡" title="Apaixonado por T.I." text="Hardware, sistemas e desenvolvimento web são meu playground." />
         </div>
@@ -67,15 +87,19 @@ function Index() {
       {/* Jornada */}
       <section id="jornada" className="mx-auto max-w-5xl px-5 py-10">
         <SectionTitle emoji="🗺️" title="Minha jornada atípica" />
+        <p className="mb-6 text-muted-foreground">
+          Nem todo caminho é linha reta — o meu teve curvas, subidas e muito aprendizado. Bora conhecer? 👇
+        </p>
         <ol className="relative space-y-5 border-l-4 border-dashed pl-8">
-          {jornada.map((j, i) => (
-            <li key={j.title} className="relative">
+          {experiencias.map((e, i) => (
+            <li key={e.title} className="relative">
               <span className="absolute -left-[3.1rem] top-2 flex h-9 w-9 items-center justify-center rounded-full bg-primary pop font-display font-bold text-primary-foreground">
                 {i + 1}
               </span>
               <div className="rounded-2xl bg-card pop p-5">
-                <h3 className="text-xl font-semibold">{j.emoji} {j.title}</h3>
-                <p className="mt-1 text-muted-foreground">{j.text}</p>
+                <span className="rounded-full bg-accent pop px-3 py-0.5 text-xs font-bold">{e.badge}</span>
+                <h3 className="mt-3 text-xl font-semibold">{e.emoji} {e.title}</h3>
+                <p className="mt-2 text-muted-foreground">{e.text}</p>
               </div>
             </li>
           ))}
@@ -86,7 +110,7 @@ function Index() {
       <section id="paixao" className="mx-auto max-w-5xl px-5 py-10">
         <SectionTitle emoji="❤️" title="Hardware & T.I." />
         <p className="mb-5 text-muted-foreground">
-          Desde cedo, abrir um gabinete pra mim é como abrir um baú do tesouro. Entender cada peça — processador, memória, placa de vídeo — e fazer tudo funcionar junto é o que me move.
+          Desde cedo, abrir um gabinete pra mim é como abrir um baú do tesouro. Entender cada peça — processador, memória, placa de vídeo — e fazer tudo funcionar junto é o que me move. E a paixão por PC gamer? Essa sempre estará no sangue! 🩸🎮
         </p>
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
           {paixoes.map((p) => (
@@ -127,8 +151,22 @@ function Index() {
       <section id="contato" className="mx-auto max-w-5xl px-5 py-10 pb-16">
         <SectionTitle emoji="🤝" title="Vamos conversar?" />
         <div className="grid gap-5 sm:grid-cols-2">
-          <LinkCard href={LINKEDIN_URL} color="bg-sky" icon="in" title="LinkedIn" text="Minha trajetória profissional e contatos." />
-          <LinkCard href={GITHUB_URL} color="bg-accent" icon="</>" title="GitHub" text="Meus códigos e experimentos." />
+          <LinkCard
+            href={LINKEDIN_URL}
+            color="bg-sky"
+            icon="in"
+            title="LinkedIn"
+            text="Minha trajetória profissional e contatos."
+            note="(postado somente o app que está em manutenção)"
+          />
+          <LinkCard
+            href={GITHUB_URL}
+            color="bg-accent"
+            icon="</>"
+            title="GitHub"
+            text="Meus códigos e experimentos."
+            note="(ainda não tem nada de extravagante lá kk)"
+          />
         </div>
         <p className="mt-12 text-center text-sm text-muted-foreground">Feito com 💛 por Luis Felipe Fontana Silva</p>
       </section>
@@ -155,13 +193,14 @@ function Fact({ color, emoji, title, text }: { color: string; emoji: string; tit
   );
 }
 
-function LinkCard({ href, color, icon, title, text }: { href: string; color: string; icon: string; title: string; text: string }) {
+function LinkCard({ href, color, icon, title, text, note }: { href: string; color: string; icon: string; title: string; text: string; note?: string }) {
   return (
     <a href={href} target="_blank" rel="noreferrer" className="flex items-center gap-4 rounded-3xl bg-card pop pop-hover p-5">
       <span className={`flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl ${color} pop font-display text-2xl font-bold`}>{icon}</span>
       <span>
         <span className="block font-display text-2xl font-semibold">{title}</span>
         <span className="block text-muted-foreground">{text}</span>
+        {note && <span className="block text-sm italic text-muted-foreground">{note}</span>}
         <span className="mt-1 block font-bold text-primary">Abrir perfil →</span>
       </span>
     </a>
