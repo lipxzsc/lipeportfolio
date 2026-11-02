@@ -135,15 +135,15 @@ function Index() {
               <p className="mt-3 font-bold text-primary">Visitar projeto →</p>
             </div>
           </a>
-          <div className="overflow-hidden rounded-3xl bg-card pop">
+          <a href="https://finanproai.netlify.app" target="_blank" rel="noreferrer" className="block overflow-hidden rounded-3xl bg-card pop pop-hover">
             <div className="flex h-36 items-center justify-center bg-secondary text-6xl">💰📊</div>
             <div className="p-5">
               <span className="rounded-full bg-sun pop px-3 py-0.5 text-xs font-bold">🚧 Em manutenção</span>
               <h3 className="mt-3 text-2xl font-semibold">FinancePro</h3>
               <p className="mt-1 text-muted-foreground">Controle de despesas e receitas para organizar o dinheiro do dia a dia. Em breve de volta, ainda melhor!</p>
-              <p className="mt-3 font-bold text-muted-foreground">Em breve…</p>
+              <p className="mt-3 font-bold text-primary">Acessar app →</p>
             </div>
-          </div>
+          </a>
         </div>
       </section>
 
