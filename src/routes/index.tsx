@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import curriculo from "@/assets/curriculo.pdf.asset.json";
 
 const LINKEDIN_URL = "https://www.linkedin.com/in/lipefontana";
 const GITHUB_URL = "https://github.com/lipxzsc";
@@ -11,6 +12,8 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Portfólio de Luis Felipe: jornada atípica, paixão por hardware e T.I. e projetos web." },
       { property: "og:title", content: "Luis Felipe Fontana Silva — Portfólio" },
       { property: "og:description", content: "Jornada atípica, paixão por hardware e T.I. e projetos web." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
   }),
   component: Index,
@@ -56,22 +59,26 @@ function Index() {
   return (
     <main className="dots min-h-screen">
       {/* Topo */}
-      <section className="mx-auto max-w-5xl px-5 pt-12 pb-10 text-center">
+      <section className="bg-secondary text-secondary-foreground">
+      <div className="mx-auto max-w-5xl px-5 pt-12 pb-12 text-center">
         <div className="floaty mx-auto mb-6 flex h-28 w-28 items-center justify-center rounded-full bg-accent pop text-6xl">
           👨‍💻
         </div>
-        <p className="inline-block rounded-full bg-card pop px-4 py-1 text-sm font-bold">Olá, eu sou o</p>
+        <p className="inline-block rounded-full border border-primary px-4 py-1 text-sm font-bold text-primary">♿ Pessoa com Deficiência (PCD) · Olá, eu sou o</p>
         <h1 className="mt-4 text-4xl font-bold leading-tight sm:text-6xl">
           Luis Felipe <span className="text-primary">Fontana</span> Silva
         </h1>
-        <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
+        <p className="mx-auto mt-2 font-display font-semibold text-primary">Tecnologia, Suporte Operacional e Processos</p>
+        <p className="mx-auto mt-4 max-w-xl text-lg opacity-80">
           Um cara curioso que ama abrir computador, entender como tudo funciona e transformar ideias em projetos de verdade. ⚡
         </p>
         <nav className="mt-8 flex flex-wrap justify-center gap-3 font-bold">
           {[["#sobre", "Sobre mim"], ["#jornada", "Jornada"], ["#paixao", "Paixões"], ["#projetos", "Projetos"], ["#contato", "Contato"]].map(([h, l]) => (
-            <a key={h} href={h} className="rounded-full bg-card pop pop-hover px-4 py-2 text-sm">{l}</a>
+            <a key={h} href={h} className="rounded-full bg-card pop pop-hover px-4 py-2 text-sm text-card-foreground">{l}</a>
           ))}
         </nav>
+        <a href={curriculo.url} download="Curriculo_Luis_Felipe_Fontana.pdf" className="mt-6 inline-block rounded-full bg-primary px-6 py-3 font-bold text-primary-foreground pop-hover">📄 Baixar currículo (PDF)</a>
+      </div>
       </section>
 
       {/* Sobre */}
@@ -90,7 +97,7 @@ function Index() {
         <p className="mb-6 text-muted-foreground">
           Nem todo caminho é linha reta — o meu teve curvas, subidas e muito aprendizado. Bora conhecer? 👇
         </p>
-        <ol className="relative space-y-5 border-l-4 border-dashed pl-8">
+        <ol className="relative space-y-5 border-l-2 border-primary pl-8">
           {experiencias.map((e, i) => (
             <li key={e.title} className="relative">
               <span className="absolute -left-[3.1rem] top-2 flex h-9 w-9 items-center justify-center rounded-full bg-primary pop font-display font-bold text-primary-foreground">
@@ -127,7 +134,7 @@ function Index() {
         <SectionTitle emoji="🧪" title="Meus projetos" />
         <div className="grid gap-5 sm:grid-cols-2">
           <a href={ADEGA_URL} target="_blank" rel="noreferrer" className="block overflow-hidden rounded-3xl bg-card pop pop-hover">
-            <div className="flex h-36 items-center justify-center bg-primary text-6xl">🍷🥤</div>
+            <div className="flex h-36 items-center justify-center bg-accent text-6xl">🍷🥤</div>
             <div className="p-5">
               <span className="rounded-full bg-mint pop px-3 py-0.5 text-xs font-bold">✅ No ar</span>
               <h3 className="mt-3 text-2xl font-semibold">Projeto Adega & Conveniência</h3>
@@ -136,11 +143,11 @@ function Index() {
             </div>
           </a>
           <a href="https://finanproai.netlify.app" target="_blank" rel="noreferrer" className="block overflow-hidden rounded-3xl bg-card pop pop-hover">
-            <div className="flex h-36 items-center justify-center bg-secondary text-6xl">💰📊</div>
+            <div className="flex h-36 items-center justify-center bg-sky text-6xl">💰📊</div>
             <div className="p-5">
-              <span className="rounded-full bg-sun pop px-3 py-0.5 text-xs font-bold">🚧 Em manutenção</span>
-              <h3 className="mt-3 text-2xl font-semibold">FinancePro</h3>
-              <p className="mt-1 text-muted-foreground">Controle de despesas e receitas para organizar o dinheiro do dia a dia. Em breve de volta, ainda melhor!</p>
+              <span className="rounded-full bg-mint pop px-3 py-0.5 text-xs font-bold">✅ No ar</span>
+              <h3 className="mt-3 text-2xl font-semibold">Finan Pro</h3>
+              <p className="mt-1 text-muted-foreground">Controle de despesas e receitas para organizar o dinheiro do dia a dia, com fluxo de caixa e entradas/saídas.</p>
               <p className="mt-3 font-bold text-primary">Acessar app →</p>
             </div>
           </a>
@@ -157,7 +164,7 @@ function Index() {
             icon="in"
             title="LinkedIn"
             text="Minha trajetória profissional e contatos."
-            note="(postado somente o app que está em manutenção)"
+            note="(postado o app Finan Pro)"
           />
           <LinkCard
             href={GITHUB_URL}
@@ -167,8 +174,17 @@ function Index() {
             text="Meus códigos e experimentos."
             note="(ainda não tem nada de extravagante lá kk)"
           />
+          <LinkCard
+            href={curriculo.url}
+            download="Curriculo_Luis_Felipe_Fontana.pdf"
+            color="bg-mint"
+            icon="📄"
+            title="Currículo"
+            text="Baixe meu currículo completo em PDF."
+            cta="Baixar PDF ↓"
+          />
         </div>
-        <p className="mt-12 text-center text-sm text-muted-foreground">Feito com 💛 por Luis Felipe Fontana Silva</p>
+        <p className="mt-12 text-center text-sm text-muted-foreground">Feito com 💙 por Luis Felipe Fontana Silva</p>
       </section>
     </main>
   );
@@ -193,15 +209,15 @@ function Fact({ color, emoji, title, text }: { color: string; emoji: string; tit
   );
 }
 
-function LinkCard({ href, color, icon, title, text, note }: { href: string; color: string; icon: string; title: string; text: string; note?: string }) {
+function LinkCard({ href, color, icon, title, text, note, download, cta = "Abrir perfil →" }: { href: string; color: string; icon: string; title: string; text: string; note?: string; download?: string; cta?: string }) {
   return (
-    <a href={href} target="_blank" rel="noreferrer" className="flex items-center gap-4 rounded-3xl bg-card pop pop-hover p-5">
+    <a href={href} {...(download ? { download } : { target: "_blank", rel: "noreferrer" })} className="flex items-center gap-4 rounded-3xl bg-card pop pop-hover p-5">
       <span className={`flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl ${color} pop font-display text-2xl font-bold`}>{icon}</span>
       <span>
         <span className="block font-display text-2xl font-semibold">{title}</span>
         <span className="block text-muted-foreground">{text}</span>
         {note && <span className="block text-sm italic text-muted-foreground">{note}</span>}
-        <span className="mt-1 block font-bold text-primary">Abrir perfil →</span>
+        <span className="mt-1 block font-bold text-primary">{cta}</span>
       </span>
     </a>
   );
