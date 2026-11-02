@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Use the shared Button component for portfolio navigation and download actions, and fixed-size icon slots with shrink-safe text containers to keep controls consistent across devices.
