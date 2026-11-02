@@ -1,4 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Accessibility, FileDown, Laptop } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import curriculo from "@/assets/curriculo.pdf.asset.json";
 
 const LINKEDIN_URL = "https://www.linkedin.com/in/lipefontana";
@@ -60,24 +62,25 @@ function Index() {
     <main className="dots min-h-screen">
       {/* Topo */}
       <section className="bg-secondary text-secondary-foreground">
-      <div className="mx-auto max-w-5xl px-5 pt-12 pb-12 text-center">
-        <div className="floaty mx-auto mb-6 flex h-28 w-28 items-center justify-center rounded-full bg-accent pop text-6xl">
-          👨‍💻
+      <div className="mx-auto max-w-5xl px-5 py-8 text-center sm:py-10">
+        <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-accent text-accent-foreground sm:h-20 sm:w-20">
+          <Laptop className="h-7 w-7 sm:h-8 sm:w-8" aria-hidden="true" />
         </div>
-        <p className="inline-block rounded-full border border-primary px-4 py-1 text-sm font-bold text-primary">♿ Pessoa com Deficiência (PCD) · Olá, eu sou o</p>
-        <h1 className="mt-4 text-4xl font-bold leading-tight sm:text-6xl">
+        <p className="inline-flex max-w-full items-center justify-center gap-2 rounded-md border border-primary/40 px-3 py-1.5 text-xs font-semibold text-primary"><Accessibility className="h-4 w-4 shrink-0" aria-hidden="true" /> Pessoa com Deficiência (PCD)</p>
+        <p className="mt-4 text-sm text-secondary-foreground/80">Olá, eu sou o</p>
+        <h1 className="mx-auto mt-2 max-w-3xl text-3xl font-bold leading-tight sm:text-5xl">
           Luis Felipe <span className="text-primary">Fontana</span> Silva
         </h1>
-        <p className="mx-auto mt-2 font-display font-semibold text-primary">Tecnologia, Suporte Operacional e Processos</p>
-        <p className="mx-auto mt-4 max-w-xl text-lg opacity-80">
+        <p className="mx-auto mt-3 max-w-lg font-display text-sm font-semibold text-primary sm:text-base">Tecnologia, Suporte Operacional e Processos</p>
+        <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-secondary-foreground/80 sm:text-base">
           Um cara curioso que ama abrir computador, entender como tudo funciona e transformar ideias em projetos de verdade. ⚡
         </p>
-        <nav className="mt-8 flex flex-wrap justify-center gap-3 font-bold">
+        <nav aria-label="Seções do portfólio" className="mt-5 flex flex-wrap justify-center gap-2">
           {[["#sobre", "Sobre mim"], ["#jornada", "Jornada"], ["#paixao", "Paixões"], ["#projetos", "Projetos"], ["#contato", "Contato"]].map(([h, l]) => (
-            <a key={h} href={h} className="rounded-full bg-card pop pop-hover px-4 py-2 text-sm text-card-foreground">{l}</a>
+            <Button key={h} asChild variant="ghost" size="sm" className="min-h-10 text-secondary-foreground hover:bg-secondary-foreground/10 hover:text-secondary-foreground"><a href={h}>{l}</a></Button>
           ))}
         </nav>
-        <a href={curriculo.url} download="Curriculo_Luis_Felipe_Fontana.pdf" className="mt-6 inline-block rounded-full bg-primary px-6 py-3 font-bold text-primary-foreground pop-hover">📄 Baixar currículo (PDF)</a>
+        <Button asChild className="mt-4 h-11 max-w-full px-5"><a href={curriculo.url} download="Curriculo_Luis_Felipe_Fontana.pdf"><FileDown aria-hidden="true" /> Baixar currículo (PDF)</a></Button>
       </div>
       </section>
 
@@ -103,9 +106,9 @@ function Index() {
               <span className="absolute -left-[3.1rem] top-2 flex h-9 w-9 items-center justify-center rounded-full bg-primary pop font-display font-bold text-primary-foreground">
                 {i + 1}
               </span>
-              <div className="rounded-2xl bg-card pop p-5">
+              <div className="rounded-lg bg-card pop p-5">
                 <span className="rounded-full bg-accent pop px-3 py-0.5 text-xs font-bold">{e.badge}</span>
-                <h3 className="mt-3 text-xl font-semibold">{e.emoji} {e.title}</h3>
+                <h3 className="mt-3 text-lg font-semibold">{e.emoji} {e.title}</h3>
                 <p className="mt-2 text-muted-foreground">{e.text}</p>
               </div>
             </li>
@@ -121,9 +124,9 @@ function Index() {
         </p>
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
           {paixoes.map((p) => (
-            <div key={p.label} className="rounded-2xl bg-card pop pop-hover p-4 text-center">
-              <div className="text-4xl">{p.emoji}</div>
-              <div className="mt-2 font-bold">{p.label}</div>
+            <div key={p.label} className="rounded-lg bg-card pop pop-hover p-4 text-center">
+              <div className="text-2xl">{p.emoji}</div>
+              <div className="mt-2 text-sm font-semibold">{p.label}</div>
             </div>
           ))}
         </div>
@@ -133,20 +136,20 @@ function Index() {
       <section id="projetos" className="mx-auto max-w-5xl px-5 py-10">
         <SectionTitle emoji="🧪" title="Meus projetos" />
         <div className="grid gap-5 sm:grid-cols-2">
-          <a href={ADEGA_URL} target="_blank" rel="noreferrer" className="block overflow-hidden rounded-3xl bg-card pop pop-hover">
-            <div className="flex h-36 items-center justify-center bg-accent text-6xl">🍷🥤</div>
+          <a href={ADEGA_URL} target="_blank" rel="noreferrer" className="block overflow-hidden rounded-lg bg-card pop pop-hover">
+            <div className="flex h-24 items-center justify-center bg-accent text-3xl">🍷🥤</div>
             <div className="p-5">
               <span className="rounded-full bg-mint pop px-3 py-0.5 text-xs font-bold">✅ No ar</span>
-              <h3 className="mt-3 text-2xl font-semibold">Projeto Adega & Conveniência</h3>
+              <h3 className="mt-3 text-xl font-semibold">Projeto Adega & Conveniência</h3>
               <p className="mt-1 text-muted-foreground">Site para adega de bebidas e loja de conveniência: catálogo de produtos e pedidos de forma simples.</p>
               <p className="mt-3 font-bold text-primary">Visitar projeto →</p>
             </div>
           </a>
-          <a href="https://finanproai.netlify.app" target="_blank" rel="noreferrer" className="block overflow-hidden rounded-3xl bg-card pop pop-hover">
-            <div className="flex h-36 items-center justify-center bg-sky text-6xl">💰📊</div>
+          <a href="https://finanproai.netlify.app" target="_blank" rel="noreferrer" className="block overflow-hidden rounded-lg bg-card pop pop-hover">
+            <div className="flex h-24 items-center justify-center bg-sky text-3xl">💰📊</div>
             <div className="p-5">
               <span className="rounded-full bg-mint pop px-3 py-0.5 text-xs font-bold">✅ No ar</span>
-              <h3 className="mt-3 text-2xl font-semibold">Finan Pro</h3>
+              <h3 className="mt-3 text-xl font-semibold">Finan Pro</h3>
               <p className="mt-1 text-muted-foreground">Controle de despesas e receitas para organizar o dinheiro do dia a dia, com fluxo de caixa e entradas/saídas.</p>
               <p className="mt-3 font-bold text-primary">Acessar app →</p>
             </div>
@@ -192,18 +195,18 @@ function Index() {
 
 function SectionTitle({ emoji, title }: { emoji: string; title: string }) {
   return (
-    <h2 className="mb-6 flex items-center gap-3 text-3xl font-bold">
-      <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent pop text-2xl">{emoji}</span>
-      {title}
+    <h2 className="mb-6 flex min-w-0 items-center gap-3 text-2xl font-bold">
+      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-accent text-lg">{emoji}</span>
+      <span className="min-w-0">{title}</span>
     </h2>
   );
 }
 
 function Fact({ color, emoji, title, text }: { color: string; emoji: string; title: string; text: string }) {
   return (
-    <div className={`rounded-2xl ${color} pop p-5`}>
-      <div className="text-4xl">{emoji}</div>
-      <h3 className="mt-2 text-xl font-semibold">{title}</h3>
+    <div className={`rounded-lg ${color} pop p-5`}>
+      <div className="text-2xl">{emoji}</div>
+      <h3 className="mt-2 text-lg font-semibold">{title}</h3>
       <p className="mt-1">{text}</p>
     </div>
   );
@@ -211,10 +214,10 @@ function Fact({ color, emoji, title, text }: { color: string; emoji: string; tit
 
 function LinkCard({ href, color, icon, title, text, note, download, cta = "Abrir perfil →" }: { href: string; color: string; icon: string; title: string; text: string; note?: string; download?: string; cta?: string }) {
   return (
-    <a href={href} {...(download ? { download } : { target: "_blank", rel: "noreferrer" })} className="flex items-center gap-4 rounded-3xl bg-card pop pop-hover p-5">
-      <span className={`flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl ${color} pop font-display text-2xl font-bold`}>{icon}</span>
-      <span>
-        <span className="block font-display text-2xl font-semibold">{title}</span>
+    <a href={href} {...(download ? { download } : { target: "_blank", rel: "noreferrer" })} className="grid grid-cols-[auto_minmax(0,1fr)] items-center gap-3 rounded-lg bg-card pop pop-hover p-5">
+      <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-md ${color} font-display text-lg font-bold`}>{icon}</span>
+      <span className="min-w-0">
+        <span className="block font-display text-lg font-semibold">{title}</span>
         <span className="block text-muted-foreground">{text}</span>
         {note && <span className="block text-sm italic text-muted-foreground">{note}</span>}
         <span className="mt-1 block font-bold text-primary">{cta}</span>
