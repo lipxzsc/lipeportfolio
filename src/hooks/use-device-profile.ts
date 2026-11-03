@@ -14,7 +14,7 @@ export function useDeviceProfile() {
         width: window.innerWidth,
         reducedMotion: motion.matches,
         saveData: connection?.saveData ?? false,
-        effectiveType: connection?.effectiveType,
+        effectiveType: connection?.effectiveType ?? "",
         hardwareConcurrency: navigator.hardwareConcurrency,
       }),
       active: !document.hidden,
