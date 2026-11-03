@@ -115,6 +115,33 @@
 @utility dots {
   background-image: linear-gradient(color-mix(in oklab, var(--primary) 6%, transparent) 1px, transparent 1px), linear-gradient(90deg, color-mix(in oklab, var(--primary) 6%, transparent) 1px, transparent 1px);
   background-size: 32px 32px;
+  animation: dots-drift 22s linear infinite;
+}
+@keyframes dots-drift {
+  from { background-position: 0 0, 0 0; }
+  to { background-position: 32px 32px, 32px 32px; }
+}
+/* Brilhos coloridos que deslizam lentamente atrás de todo o conteúdo */
+main.dots {
+  position: relative;
+  isolation: isolate;
+}
+main.dots::before {
+  content: "";
+  position: absolute;
+  inset: -25%;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(38rem 38rem at 20% 18%, color-mix(in oklab, var(--primary) 10%, transparent), transparent 70%),
+    radial-gradient(32rem 32rem at 80% 45%, color-mix(in oklab, var(--mint) 12%, transparent), transparent 70%),
+    radial-gradient(34rem 34rem at 45% 85%, color-mix(in oklab, var(--sky) 14%, transparent), transparent 70%);
+  animation: glow-flow 26s ease-in-out infinite alternate;
+}
+@keyframes glow-flow {
+  from { transform: translate(-4%, -3%) scale(1); }
+  50% { transform: translate(3%, 4%) scale(1.12) rotate(6deg); }
+  to { transform: translate(-2%, 5%) scale(0.96) rotate(-5deg); }
 }
 @utility floaty {
   animation: floaty 4s ease-in-out infinite;
