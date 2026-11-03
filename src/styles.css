@@ -168,4 +168,6 @@ main.dots::before {
   .pop-hover { transition: none; }
   .pop-hover:hover { transform: none; }
   .header-button-3d { animation: none; transition: none; }
+  .dots { animation: none; }
+  main.dots::before { animation: none; }
 }
