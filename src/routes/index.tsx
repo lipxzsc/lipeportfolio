@@ -77,7 +77,7 @@ function Index() {
         </p>
         <nav aria-label="Seções do portfólio" className="mt-5 flex flex-wrap justify-center gap-2">
           {[["#sobre", "Sobre mim"], ["#jornada", "Jornada"], ["#paixao", "Paixões"], ["#projetos", "Projetos"], ["#contato", "Contato"]].map(([h, l]) => (
-            <Button key={h} asChild variant="ghost" size="sm" className="min-h-10 text-secondary-foreground hover:bg-secondary-foreground/10 hover:text-secondary-foreground"><a href={h}>{l}</a></Button>
+            <Button key={h} asChild variant="outline" size="sm" className="min-h-10 border-primary/30 bg-secondary-foreground/5 px-4 font-semibold text-secondary-foreground shadow-sm hover:border-primary hover:bg-accent hover:text-accent-foreground"><a href={h}>{l}</a></Button>
           ))}
         </nav>
         <Button asChild className="mt-4 h-11 max-w-full px-5"><a href={curriculo.url} download="Curriculo_Luis_Felipe_Fontana.pdf"><FileDown aria-hidden="true" /> Baixar currículo (PDF)</a></Button>
