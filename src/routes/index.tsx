@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
 import { Accessibility, FileDown, Laptop } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import curriculo from "@/assets/curriculo.pdf.asset.json";
@@ -58,6 +59,10 @@ const paixoes = [
 ];
 
 function Index() {
+  const [touchedOptions, setTouchedOptions] = useState<string[]>([]);
+  const stopOptionMotion = (href: string) => {
+    setTouchedOptions((current) => current.includes(href) ? current : [...current, href]);
+  };
   return (
     <main className="dots min-h-screen">
       {/* Topo */}
@@ -75,9 +80,9 @@ function Index() {
         <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-secondary-foreground/80 sm:text-base">
           Um cara curioso que ama abrir computador, entender como tudo funciona e transformar ideias em projetos de verdade. ⚡
         </p>
-        <nav aria-label="Seções do portfólio" className="mt-5 flex flex-wrap justify-center gap-2">
-          {[["#sobre", "Sobre mim"], ["#jornada", "Jornada"], ["#paixao", "Paixões"], ["#projetos", "Projetos"], ["#contato", "Contato"]].map(([h, l]) => (
-            <Button key={h} asChild variant="outline" size="sm" className="min-h-10 border-primary/30 bg-secondary-foreground/5 px-4 font-semibold text-secondary-foreground shadow-sm hover:border-primary hover:bg-accent hover:text-accent-foreground"><a href={h}>{l}</a></Button>
+        <nav aria-label="Seções do portfólio" className="mt-5 flex flex-wrap justify-center gap-3 py-2">
+          {([["#sobre", "Sobre mim"], ["#jornada", "Jornada"], ["#paixao", "Paixões"], ["#projetos", "Projetos"], ["#contato", "Contato"]] as const).map(([h, l]) => (
+            <Button key={h} asChild variant="outline" size="sm" className="header-button-3d min-h-10 px-4 font-semibold" ><a href={h} data-touched={touchedOptions.includes(h)} onPointerDown={() => stopOptionMotion(h)} onClick={() => stopOptionMotion(h)}>{l}</a></Button>
           ))}
         </nav>
         <Button asChild className="mt-4 h-11 max-w-full px-5"><a href={curriculo.url} download="Curriculo_Luis_Felipe_Fontana.pdf"><FileDown aria-hidden="true" /> Baixar currículo (PDF)</a></Button>
