@@ -39,13 +39,13 @@ const experiencias = [
     emoji: "🖥️",
     title: "Computação desde pequeno",
     badge: "Paixão de infância",
-    text: "Desde muito novo sempre gostei e fucei em tudo sobre computação e hardware. Trocava peças, melhorava algumas e trocava outras, instalava drivers e programas, além de formatação e backup de arquivos. O computador sempre foi meu laboratório particular! 🔬",
+    text: "Desde muito novo sempre gostei e fucei em tudo sobre computação e hardware. Trocava peças, melhorava algumas, trocava outras, instalava drivers e programas, além de fazer formatação e backup de arquivos. O computador sempre foi meu laboratório particular! 🔬",
   },
   {
     emoji: "🌐",
-    title: "Fuçando na web",
+    title: "Fuçando na web e códigos",
     badge: "Explorador nato",
-    text: "Depois comecei a fuçar na web: criação de websites, alterações de templates WordPress… e até cheguei na época de pastear cheats de Counter-Strike (pegar funcionalidades da source de um cheat e adicionar em outra source pra \"ter um cheat próprio\" 😅). Era apaixonado em descobrir tudo que poderia fazer!",
+    text: "Depois, comecei a fuçar na web: criação de websites, alterações de templates do WordPress, sites de filmes e séries (tipo megaflix)… e até passei pela época de pastear cheats de Counter-Strike (pegar funcionalidades do código de um pra colocar em outro e \"ter meu próprio cheat\" 😅). Eu era apaixonado em descobrir tudo o que dava pra fazer!",
   },
 ];
 
