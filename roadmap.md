@@ -1,0 +1,2 @@
+- [x] Add a compact illustrated computer avatar.
+- [ ] Adapt effects to device capabilities and verify phone, tablet, desktop, and navigation.

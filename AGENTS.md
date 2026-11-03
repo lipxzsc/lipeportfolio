@@ -10,3 +10,4 @@
 <!-- LOVABLE:END -->
 
 - Use the shared Button component for portfolio navigation and download actions, and fixed-size icon slots with shrink-safe text containers to keep controls consistent across devices.
+- Detect viewport and browser capabilities after hydration rather than relying on device names or user-agent strings; keep layout CSS-driven and reduce effects for limited devices, data saving, reduced motion, and hidden tabs.
