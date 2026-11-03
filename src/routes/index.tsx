@@ -81,7 +81,7 @@ function Index() {
           Um cara curioso que ama abrir computador, entender como tudo funciona e transformar ideias em projetos de verdade. ⚡
         </p>
         <nav aria-label="Seções do portfólio" className="mt-5 flex flex-wrap justify-center gap-3 py-2">
-          {[["#sobre", "Sobre mim"], ["#jornada", "Jornada"], ["#paixao", "Paixões"], ["#projetos", "Projetos"], ["#contato", "Contato"]].map(([h, l]) => (
+          {([["#sobre", "Sobre mim"], ["#jornada", "Jornada"], ["#paixao", "Paixões"], ["#projetos", "Projetos"], ["#contato", "Contato"]] as const).map(([h, l]) => (
             <Button key={h} asChild variant="outline" size="sm" className="header-button-3d min-h-10 px-4 font-semibold" ><a href={h} data-touched={touchedOptions.includes(h)} onPointerDown={() => stopOptionMotion(h)} onClick={() => stopOptionMotion(h)}>{l}</a></Button>
           ))}
         </nav>
