@@ -1,8 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { Accessibility, FileDown, Laptop } from "lucide-react";
+import { Accessibility, FileDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import curriculo from "@/assets/curriculo.pdf.asset.json";
+import computerAvatar from "@/assets/computer-avatar.png";
+import { useDeviceProfile } from "@/hooks/use-device-profile";
 
 const LINKEDIN_URL = "https://www.linkedin.com/in/lipefontana";
 const GITHUB_URL = "https://github.com/lipxzsc";
@@ -59,17 +61,18 @@ const paixoes = [
 ];
 
 function Index() {
+  const profile = useDeviceProfile();
   const [touchedOptions, setTouchedOptions] = useState<string[]>([]);
   const stopOptionMotion = (href: string) => {
     setTouchedOptions((current) => current.includes(href) ? current : [...current, href]);
   };
   return (
-    <main className="dots min-h-screen">
+    <main className="dots min-h-screen" data-device={profile.device} data-effects={profile.effects} data-active={profile.active}>
       {/* Topo */}
       <section className="bg-secondary text-secondary-foreground">
       <div className="mx-auto max-w-5xl px-5 py-8 text-center sm:py-10">
-        <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-accent text-accent-foreground sm:h-20 sm:w-20">
-          <Laptop className="h-7 w-7 sm:h-8 sm:w-8" aria-hidden="true" />
+        <div className="mx-auto mb-5 flex h-20 w-20 items-center justify-center overflow-hidden rounded-full border border-primary/40 bg-accent sm:h-24 sm:w-24">
+          <img src={computerAvatar} alt="Bonequinho sorridente usando um computador" width={96} height={96} fetchPriority="high" className="h-full w-full object-contain" />
         </div>
         <p className="inline-flex max-w-full items-center justify-center gap-2 rounded-md border border-primary/40 px-3 py-1.5 text-xs font-semibold text-primary"><Accessibility className="h-4 w-4 shrink-0" aria-hidden="true" /> Pessoa com Deficiência (PCD)</p>
         <p className="mt-4 text-sm text-secondary-foreground/80">Olá, eu sou o</p>
