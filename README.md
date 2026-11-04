@@ -1,38 +1,46 @@
-# Lipeportfolio
+# 🚀 Portfólio Profissional — Luis Felipe Fontana Silva
 
-Faça um site simples de portfólio para mim com breve apresentação sobre minha jornada atípica de trabalhos informais distintos, minha paixão por hardware e t.i e inclua links com prévia do meu @connector:linkedin:"LinkedIn" Do meu github e dos 2 projetos que tenho [ Adega de Bebidas ] ( https://projetoadega.lovable.app ) oculte o link para um personalizado tipo projeto de adega/conveniencia 
+Bem-vindo ao repositório do meu portfólio profissional! Este projeto foi desenvolvido para centralizar meus principais trabalhos, aplicações web, competências técnicas e experiências em desenvolvimento de software e soluções digitais.
 
-E o outro projeto em manutenção (financepro) projeto de controle de despesas e receitas 
+🔗 **Acesse a aplicação online:** [lipeportfolio.lovable.app](https://lipeportfolio.lovable.app/)
 
-No sumário sobre mim inclua meu nome Luis Felipe Fontana Silva 
+---
 
-Pcd Cid 10: E84.8 Fibrose Cística
+## 🛠️ Tecnologias e Stack Tecnológica
 
-23 anos terminando ensino médio e ingressando mercado de trabalho 
+O projeto foi construído utilizando ferramentas modernas de desenvolvimento web, garantindo alta performance, design responsivo e uma experiência de usuário fluida:
 
+* **Front-end:** React, TypeScript, Tailwind CSS
+* **Arquitetura & Metodologias:** Desenvolvimento ágil, metodologias low-code, design responsivo e componentização modular
+* **Versionamento & Deploy:** Git, GitHub e plataformas modernas de nuvem
+* **Assistência & Produtividade:** Otimização de fluxos de trabalho utilizando Inteligência Artificial e automação
 
+---
 
-Faça lúdico divertido e bem didático/elaborado esse portfólio
+## 🌟 Principais Projetos em Destaque
 
-This project was built with [Lovable](https://lovable.dev).
+Além do portfólio, desenvolvi e estruturei diversas soluções completas focadas em produtividade, e-commerce e gestão financeira:
 
-**Live app**: https://lipeportfolio.lovable.app
+1. **Finan Pro** — Aplicação web responsiva para controle financeiro pessoal, contando com rolagem automatizada de saldos, gráficos dinâmicos de orçamento, exportação de dados em CSV/PDF e um módulo de consultoria inteligente.
+2. **Subzero Delivery (Projeto Adega)** — Sistema full-stack de e-commerce e delivery voltado para o setor de bebidas, equipado com painel administrativo completo e total conformidade com as diretrizes da LGPD.
+3. **Projetos de Automação e Pesquisa** — Ferramentas e protótipos focados na prospecção de negócios locais e digitalização de processos.
 
-## Build with Lovable
+---
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/eea813b0-59d2-4a40-a952-0a43a048ad83).
+## 💼 Experiência & Perfil Profissional
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+Profissional com sólida bagagem em ambientes dinâmicos, unindo conhecimentos práticos em:
+* **Desenvolvimento e Arquitetura de Software:** Criação de interfaces modernas, prototipação rápida e integração de ferramentas web.
+* **Suporte Técnico e Diagnóstico:** Manutenção de hardware, montagem de PCs, formatação de sistemas operacionais e diagnósticos avançados.
+* **Gestão e Atendimento:** Experiência prévia em vendas, controle de estoque, suporte ao cliente e organização de processos administrativos.
 
-## Development
+---
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+## 📬 Contato e Redes
 
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
-```
+* **Portfólio:** [lipeportfolio.lovable.app](https://lipeportfolio.lovable.app/)
+* **GitHub:** [lipxzsc](https://github.com/lipxzsc)
+* **Localização:** Lages, Santa Catarina — Brasil
+
+---
+*Desenvolvido com dedicação por **Luis Felipe Fontana Silva**.*
