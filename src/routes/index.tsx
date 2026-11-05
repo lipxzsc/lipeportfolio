@@ -88,7 +88,7 @@ function Index() {
             <Button key={h} asChild variant="outline" size="sm" className="header-button-3d min-h-10 px-4 font-semibold" ><a href={h} data-touched={touchedOptions.includes(h)} onPointerDown={() => stopOptionMotion(h)} onClick={() => stopOptionMotion(h)}>{l}</a></Button>
           ))}
         </nav>
-        <Button asChild className="mt-4 h-11 max-w-full px-5"><a href={curriculo.url} download="Curriculo_Luis_Felipe_Fontana.pdf"><FileDown aria-hidden="true" /> Baixar currículo (PDF)</a></Button>
+        <Button asChild className="mt-4 h-11 max-w-full px-5"><a href={curriculo.url} download="Curriculo_Luis_Felipe_Fontana_Silva_v4.pdf"><FileDown aria-hidden="true" /> Baixar currículo (PDF)</a></Button>
       </div>
       </section>
 
@@ -187,7 +187,7 @@ function Index() {
           />
           <LinkCard
             href={curriculo.url}
-            download="Curriculo_Luis_Felipe_Fontana.pdf"
+            download="Curriculo_Luis_Felipe_Fontana_Silva_v4.pdf"
             color="bg-mint"
             icon="📄"
             title="Currículo"
